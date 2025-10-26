@@ -1,1 +1,1 @@
-Some Reaper Scripts for Sound Design and Game Audio!
+Some Reaper Scripts - may be created with AI
