@@ -1,3 +1,16 @@
+-- @description Move selected take FX chain to track FX chain, remove from take, and show confirmation
+-- @author Justin Chow
+-- @version 1.0
+-- @about
+--   Move selected take FXs chain to its track FX chain
+--   
+-- @link 
+-- @changelog 
+--   10/26/25 - v1.0 add script
+
+
+
+
 -- Script: Move selected take FX chain to track FX chain, remove from take, and show confirmation
 function main()
   -- Get the selected media item
