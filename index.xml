@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ReaperScripts" commit="776a7a0e05bd4995ed9ac6de9374db7fc0e94736">
+<index version="1" name="ReaperScripts" commit="4d3c6b890a1ca668c8c89b08f0c5e19517c00d83">
+  <category name="FX">
+    <reapack name="jztn_MoveSelectedTakeFXChainToTrackFXChain.lua" type="script" desc="Move selected take FX chain to track FX chain, remove from take, and show confirmation">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Move selected take FX chain to track FX chain, remove from take, and show confirmation\par}
+}
+]]></description>
+        <link rel="website">https://github.com/justinchowsound</link>
+      </metadata>
+      <version name="1.0" author="Justin Chow" time="2025-10-27T15:10:06Z">
+        <changelog><![CDATA[10/26/25 - v1.0 add script]]></changelog>
+        <source main="main">https://github.com/justinchowsound/ReaperScripts/raw/4d3c6b890a1ca668c8c89b08f0c5e19517c00d83/FX/jztn_MoveSelectedTakeFXChainToTrackFXChain.lua</source>
+      </version>
+    </reapack>
+  </category>
   <metadata>
     <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
