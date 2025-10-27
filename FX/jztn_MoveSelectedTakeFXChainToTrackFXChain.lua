@@ -1,10 +1,10 @@
 -- @description Move selected take FX chain to track FX chain, remove from take, and show confirmation
 -- @author Justin Chow
 -- @version 1.0
--- @about
---   Move selected take FXs chain to its track FX chain
+-- @about Move selected take FX chain to track FX chain, remove from take, and show confirmation
 --   
--- @link 
+--   
+-- @link https://github.com/justinchowsound
 -- @changelog 
 --   10/26/25 - v1.0 add script
 
