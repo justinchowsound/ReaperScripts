@@ -1,0 +1,86 @@
+-- @description TrimItemToFirstTakeMarker
+-- @author Justin Chow
+-- @version 1.0
+-- @about Add take marker to video as sync point, then use this to trim 
+--   
+--   
+-- @link https://github.com/justinchowsound
+-- @changelog 
+--   10/27/25 - v1.0 add script
+
+
+-- Function to print debug messages
+local function debug_msg(msg)
+    reaper.ShowConsoleMsg(tostring(msg) .. "\n")
+end
+
+-- Start undo block
+reaper.Undo_BeginBlock()
+
+-- Get the selected media item
+local item = reaper.GetSelectedMediaItem(0, 0)
+if not item then
+    debug_msg("No item selected")
+    return
+end
+
+-- Get the active take
+local take = reaper.GetActiveTake(item)
+if not take then
+    debug_msg("No active take found")
+    return
+end
+
+-- Get the number of take markers
+local marker_count = reaper.GetNumTakeMarkers(take)
+debug_msg("Marker count: " .. marker_count)
+if marker_count == 0 then
+    debug_msg("No take markers found")
+    return
+end
+
+-- Get position of first take marker (relative to take start)
+local _, marker_pos = reaper.GetTakeMarker(take, 0)
+debug_msg("Raw marker position: " .. tostring(marker_pos))
+if not marker_pos then
+    debug_msg("Failed to get marker position")
+    return
+end
+
+marker_pos = tonumber(marker_pos) or 0
+debug_msg("Converted marker position: " .. marker_pos)
+
+-- Get item position and length
+local item_pos = reaper.GetMediaItemInfo_Value(item, "D_POSITION")
+local item_len = reaper.GetMediaItemInfo_Value(item, "D_LENGTH")
+debug_msg("Item position: " .. item_pos .. ", Item length: " .. item_len)
+
+-- Get take source offset
+local take_offset = reaper.GetMediaItemTakeInfo_Value(take, "D_STARTOFFS")
+debug_msg("Take offset: " .. take_offset)
+
+-- Calculate new item position and length
+-- Move start to marker position, keep end fixed
+local trim_amount = marker_pos + take_offset
+local new_pos = item_pos + trim_amount
+local new_len = item_len - trim_amount
+debug_msg("Trim amount: " .. trim_amount .. ", New position: " .. new_pos .. ", New length: " .. new_len)
+
+-- Ensure new length is positive
+if new_len <= 0 then
+    debug_msg("Invalid new length: " .. new_len)
+    return
+end
+
+-- Update item position and length
+local success_pos = reaper.SetMediaItemInfo_Value(item, "D_POSITION", new_pos)
+local success_len = reaper.SetMediaItemInfo_Value(item, "D_LENGTH", new_len)
+debug_msg("Set position success: " .. tostring(success_pos) .. ", Set length success: " .. tostring(success_len))
+
+-- Update arrange view
+reaper.UpdateArrange()
+
+-- End undo block
+reaper.Undo_EndBlock("Trim item to first take marker", -1)
+
+debug_msg("Script completed successfully")
