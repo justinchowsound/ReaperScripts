@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="JustinChowReaperScripts" commit="4d3c6b890a1ca668c8c89b08f0c5e19517c00d83">
+<index version="1" name="jztn Scripts" commit="4d3c6b890a1ca668c8c89b08f0c5e19517c00d83">
   <category name="FX">
     <reapack name="jztn_MoveSelectedTakeFXChainToTrackFXChain.lua" type="script" desc="Move selected take FX chain to track FX chain, remove from take, and show confirmation">
       <metadata>
