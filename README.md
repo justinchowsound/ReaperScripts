@@ -1,4 +1,5 @@
-Some Reaper Scripts - may be created with AI
+#Justin Chow's Reaper Scripts
 
+May be created with AI 	¯\_(ツ)_/¯
 
-https://github.com/justinchowsound/reaperscripts/raw/master/index.xml.
+ReaPack import link: https://github.com/justinchowsound/reaperscripts/raw/master/index.xml.
